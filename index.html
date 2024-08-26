@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Basenton</title>
+    <title>模拟页面跳转</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -38,70 +38,25 @@
         nav ul li a:hover {
             text-decoration: underline;
         }
-        .content {
-            display: none;
-            padding: 20px;
-        }
-        .content.active {
-            display: block;
-        }
-        footer {
-            background: #333;
-            color: #fff;
-            text-align: center;
-            padding: 10px;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-        }
     </style>
 </head>
 <body>
     <header>
         <nav>
             <ul>
-                <li><a href="#home" onclick="showSection('home')">首页</a></li>
-                <li><a href="#about" onclick="showSection('about')">关于我们</a></li>
-                <li><a href="#products" onclick="showSection('products')">产品指南</a></li>
-                <li><a href="#cases" onclick="showSection('cases')">案例</a></li>
-                <li><a href="#contact" onclick="showSection('contact')">联系我们</a></li>
+                <li><a href="#" onclick="navigateTo('home.html')">首页</a></li>
+                <li><a href="#" onclick="navigateTo('about.html')">关于我们</a></li>
+                <li><a href="#" onclick="navigateTo('products.html')">产品指南</a></li>
+                <li><a href="#" onclick="navigateTo('cases.html')">案例</a></li>
+                <li><a href="#" onclick="navigateTo('contact.html')">联系我们</a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
-        <div id="home" class="content active">
-            <h1>首页</h1>
-            <p>欢迎来到我们的首页。</p>
-        </div>
-        <div id="about" class="content">
-            <h1>关于我们</h1>
-            <p>我们致力于提供高效的物流解决方案。</p>
-        </div>
-        <div id="products" class="content">
-            <h1>产品指南</h1>
-            <p>探索我们广泛的物流产品和服务。</p>
-        </div>
-        <div id="cases" class="content">
-            <h1>案例</h1>
-            <p>查看我们的成功案例。</p>
-        </div>
-        <div id="contact" class="content">
-            <h1>联系我们</h1>
-            <p>获取更多信息或联系我们。</p>
-        </div>
-    </main>
-
-    <footer>
-        <p>&copy; 2024 Basenton. All rights reserved.</p>
-    </footer>
-
     <script>
-        function showSection(sectionId) {
-            document.querySelectorAll('.content').forEach(function(section) {
-                section.classList.remove('active');
-            });
-            document.getElementById(sectionId).classList.add('active');
+        function navigateTo(url) {
+            // This simulates navigating to a new page
+            window.location.href = url;
         }
     </script>
 </body>
