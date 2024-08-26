@@ -38,31 +38,12 @@
         nav ul li a:hover {
             text-decoration: underline;
         }
-        section {
+        .content {
+            display: none;
             padding: 20px;
-            text-align: center;
         }
-        .hero {
-            background: #f4f4f4;
-            padding: 50px 20px;
-        }
-        .hero h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
-        .hero p {
-            font-size: 1.2em;
-        }
-        .btn {
-            background: #007bff;
-            color: #fff;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-        }
-        .btn:hover {
-            background: #0056b3;
+        .content.active {
+            display: block;
         }
         footer {
             background: #333;
@@ -79,57 +60,49 @@
     <header>
         <nav>
             <ul>
-                <li><a href="#home">首页</a></li>
-                <li><a href="#about">关于我们</a></li>
-                <li><a href="#products">产品指南</a></li>
-                <li><a href="#cases">案例</a></li>
-                <li><a href="#contact">联系我们</a></li>
+                <li><a href="#home" onclick="showSection('home')">首页</a></li>
+                <li><a href="#about" onclick="showSection('about')">关于我们</a></li>
+                <li><a href="#products" onclick="showSection('products')">产品指南</a></li>
+                <li><a href="#cases" onclick="showSection('cases')">案例</a></li>
+                <li><a href="#contact" onclick="showSection('contact')">联系我们</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section id="home" class="hero">
-            <h1>欢迎来到 Basenton</h1>
-            <p>中国领先的物流服务代理商</p>
-            <a href="#products" class="btn">查看产品</a>
-        </section>
-
-        <section id="about" class="about">
-            <h2>关于我们</h2>
-            <p>我们致力于提供高效的物流解决方案...</p>
-            <a href="#about" class="btn">了解更多</a>
-        </section>
-
-        <section id="products" class="products">
-            <h2>我们的产品</h2>
-            <p>探索我们广泛的物流产品和服务...</p>
-            <a href="#products" class="btn">查看产品指南</a>
-        </section>
-
-        <section id="cases" class="cases">
-            <h2>成功案例</h2>
-            <p>查看我们如何帮助客户实现他们的物流目标...</p>
-            <a href="#cases" class="btn">查看案例</a>
-        </section>
-
-        <section id="contact" class="contact">
-            <h2>联系我们</h2>
-            <p>如果您有任何问题或合作意向，请填写下方表单...</p>
-            <form action="" method="post">
-                <label for="name">姓名</label>
-                <input type="text" id="name" name="name" required>
-                <label for="email">电子邮件</label>
-                <input type="email" id="email" name="email" required>
-                <label for="message">留言</label>
-                <textarea id="message" name="message" required></textarea>
-                <button type="submit" class="btn">提交</button>
-            </form>
-        </section>
+        <div id="home" class="content active">
+            <h1>首页</h1>
+            <p>欢迎来到我们的首页。</p>
+        </div>
+        <div id="about" class="content">
+            <h1>关于我们</h1>
+            <p>我们致力于提供高效的物流解决方案。</p>
+        </div>
+        <div id="products" class="content">
+            <h1>产品指南</h1>
+            <p>探索我们广泛的物流产品和服务。</p>
+        </div>
+        <div id="cases" class="content">
+            <h1>案例</h1>
+            <p>查看我们的成功案例。</p>
+        </div>
+        <div id="contact" class="content">
+            <h1>联系我们</h1>
+            <p>获取更多信息或联系我们。</p>
+        </div>
     </main>
 
     <footer>
         <p>&copy; 2024 Basenton. All rights reserved.</p>
     </footer>
+
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('.content').forEach(function(section) {
+                section.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
+        }
+    </script>
 </body>
 </html>
