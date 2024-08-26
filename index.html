@@ -3,32 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>模拟页面跳转</title>
+    <title>主页</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            background-color: #f4f4f4;
         }
         header {
-            background: #333;
+            background-color: #333;
             color: #fff;
-            padding: 10px 0;
-            position: sticky;
-            top: 0;
+            padding: 15px;
+            position: fixed;
             width: 100%;
+            top: 0;
+            left: 0;
             z-index: 1000;
         }
         nav ul {
             list-style: none;
-            padding: 0;
-            text-align: center;
             margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
         }
         nav ul li {
-            display: inline;
-            margin: 0 15px;
+            margin: 0 10px;
         }
         nav ul li a {
             color: #fff;
@@ -38,26 +40,50 @@
         nav ul li a:hover {
             text-decoration: underline;
         }
+        .container {
+            margin-top: 60px;
+            padding: 20px;
+            text-align: center;
+        }
+        .section {
+            padding: 40px 20px;
+            margin: 20px 0;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
     </style>
 </head>
 <body>
     <header>
         <nav>
             <ul>
-                <li><a href="#" onclick="navigateTo('home.html')">首页</a></li>
-                <li><a href="#" onclick="navigateTo('about.html')">关于我们</a></li>
-                <li><a href="#" onclick="navigateTo('products.html')">产品指南</a></li>
-                <li><a href="#" onclick="navigateTo('cases.html')">案例</a></li>
-                <li><a href="#" onclick="navigateTo('contact.html')">联系我们</a></li>
+                <li><a href="home.html">首页</a></li>
+                <li><a href="about.html">关于我们</a></li>
+                <li><a href="products.html">产品指南</a></li>
+                <li><a href="cases.html">案例</a></li>
+                <li><a href="contact.html">联系我们</a></li>
             </ul>
         </nav>
     </header>
 
-    <script>
-        function navigateTo(url) {
-            // This simulates navigating to a new page
-            window.location.href = url;
-        }
-    </script>
+    <div class="container">
+        <div class="section">
+            <h1>主页</h1>
+            <p>欢迎来到我们的网站。使用导航菜单访问其他页面。</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Basenton. All rights reserved.</p>
+    </footer>
 </body>
 </html>
