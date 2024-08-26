@@ -3,100 +3,133 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>模仿 Basenton 网站</title>
+    <title>Basenton</title>
     <style>
         body {
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            font-family: 'Arial', sans-serif;
+            box-sizing: border-box;
+        }
+        header {
+            background: #333;
             color: #fff;
-            background: linear-gradient(135deg, #00aaff, #005f73);
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
             text-align: center;
-            overflow-x: hidden;
+            margin: 0;
         }
-        .header {
-            background: #003f5c;
-            padding: 20px 0;
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
         }
-        .header h1 {
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+        section {
+            padding: 20px;
+            text-align: center;
+        }
+        .hero {
+            background: #f4f4f4;
+            padding: 50px 20px;
+        }
+        .hero h1 {
             margin: 0;
             font-size: 2.5em;
         }
-        .nav {
-            background: #004d6e;
-            padding: 10px 0;
+        .hero p {
+            font-size: 1.2em;
         }
-        .nav a {
+        .btn {
+            background: #007bff;
             color: #fff;
+            padding: 10px 20px;
             text-decoration: none;
-            padding: 15px 20px;
-            font-size: 1.2em;
-            display: inline-block;
-            transition: background 0.3s;
+            border-radius: 5px;
+            font-weight: bold;
         }
-        .nav a:hover {
-            background: #003f5c;
+        .btn:hover {
+            background: #0056b3;
         }
-        .main {
-            padding: 50px 20px;
-        }
-        .main h2 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-        }
-        .main p {
-            font-size: 1.2em;
-            line-height: 1.6;
-        }
-        .image-container {
-            margin: 30px 0;
-        }
-        .image-container img {
-            max-width: 100%;
-            border-radius: 15px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-        }
-        .footer {
-            background: #003f5c;
+        footer {
+            background: #333;
             color: #fff;
-            padding: 20px 0;
             text-align: center;
-            position: fixed;
-            width: 100%;
+            padding: 10px;
+            position: relative;
             bottom: 0;
-        }
-        @media (min-width: 768px) {
-            .main {
-                padding: 100px 50px;
-            }
+            width: 100%;
         }
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>模仿 Basenton 网站</h1>
-    </div>
-    <div class="nav">
-        <a href="#">首页</a>
-        <a href="#">服务</a>
-        <a href="#">关于我们</a>
-        <a href="#">联系我们</a>
-    </div>
-    <div class="main">
-        <h2>美丽的大海</h2>
-        <p>远处的海浪在阳光下闪烁，海天一色，犹如人间仙境。微风拂过，带来丝丝凉意。</p>
-        <div class="image-container">
-            <img src="https://example.com/ocean.jpg" alt="美丽的大海">
-        </div>
-        <p>这是一片蔚蓝的海域，海面平静如镜，偶尔有几只海鸟掠过，给人以宁静与和谐的感觉。</p>
-        <h2>优雅的轮船</h2>
-        <p>这艘轮船在湛蓝的海面上轻盈航行，带来无限的遐想与希望，仿佛是大海的精灵。</p>
-        <div class="image-container">
-            <img src="https://example.com/ship.png" alt="美丽的轮船">
-        </div>
-    </div>
-    <div class="footer">
-        <p>&copy; 2024 模仿 Basenton 网站 | 版权所有</p>
-    </div>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">首页</a></li>
+                <li><a href="#about">关于我们</a></li>
+                <li><a href="#products">产品指南</a></li>
+                <li><a href="#cases">案例</a></li>
+                <li><a href="#contact">联系我们</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <h1>欢迎来到 Basenton</h1>
+            <p>中国领先的物流服务代理商</p>
+            <a href="#products" class="btn">查看产品</a>
+        </section>
+
+        <section id="about" class="about">
+            <h2>关于我们</h2>
+            <p>我们致力于提供高效的物流解决方案...</p>
+            <a href="#about" class="btn">了解更多</a>
+        </section>
+
+        <section id="products" class="products">
+            <h2>我们的产品</h2>
+            <p>探索我们广泛的物流产品和服务...</p>
+            <a href="#products" class="btn">查看产品指南</a>
+        </section>
+
+        <section id="cases" class="cases">
+            <h2>成功案例</h2>
+            <p>查看我们如何帮助客户实现他们的物流目标...</p>
+            <a href="#cases" class="btn">查看案例</a>
+        </section>
+
+        <section id="contact" class="contact">
+            <h2>联系我们</h2>
+            <p>如果您有任何问题或合作意向，请填写下方表单...</p>
+            <form action="" method="post">
+                <label for="name">姓名</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">电子邮件</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">留言</label>
+                <textarea id="message" name="message" required></textarea>
+                <button type="submit" class="btn">提交</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Basenton. All rights reserved.</p>
+    </footer>
 </body>
 </html>
