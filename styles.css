@@ -1,6 +1,7 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
+    line-height: 1.6;
 }
 
 header {
@@ -30,16 +31,14 @@ nav ul li a {
 .carousel {
     position: relative;
     width: 100%;
-    max-width: 1200px; /* Adjust width to match the target site */
-    height: 500px;     /* Adjust height to match the target site */
-    margin: auto;
+    height: 42vh; /* 设置轮播图高度为页面高度的三分之一 */
     overflow: hidden;
 }
 
 .carousel-wrapper {
     position: relative;
     width: 100%;
-    height: 100%;
+    height: 100%; /* 高度继承自.carousel */
 }
 
 .carousel-slides {
@@ -49,14 +48,14 @@ nav ul li a {
 }
 
 .carousel-slide {
-    min-width: 100%;
+    flex: 0 0 100%;
     height: 100%;
 }
 
 .carousel-slide img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensures images cover the slide area without distortion */
+    object-fit: cover; /* 确保图片覆盖容器，可能会裁剪 */
 }
 
 input[type="radio"] {
@@ -105,15 +104,16 @@ input[type="radio"]:checked + .carousel-controls .control-dot {
 
 .hero img {
     width: 100%;
-    max-height: 400px;
+    height: 30vh;
     object-fit: cover;
+    display: block;
 }
 
 .features {
     display: flex;
     justify-content: space-around;
     padding: 20px;
-    flex-wrap: wrap; /* Allows wrapping for smaller screens */
+    flex-wrap: wrap;
 }
 
 .feature {
@@ -125,8 +125,21 @@ input[type="radio"]:checked + .carousel-controls .control-dot {
 .feature img {
     width: 100%;
     max-width: 200px;
-    height: auto; /* Ensure aspect ratio is maintained */
 }
+
+.image-gallery {
+    display: flex;
+    justify-content: space-between;
+    padding: 1px;
+}
+
+.image-item {
+    flex: 1;
+    margin: 0 1px;
+    text-align: center;
+}
+
+
 
 footer {
     text-align: center;
